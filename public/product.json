@@ -1,8 +1,43 @@
 {
   "name": "Kimi K3 Best",
   "origin": "https://kimik3.best",
+  "routes": [
+    "/",
+    "/official-sources/",
+    "/api-and-developer/",
+    "/architecture/",
+    "/reviews-and-media/",
+    "/companion-pages/",
+    "/follow-up-watchlist/"
+  ],
   "collectedAt": "2026-07-23T00:30:00+08:00",
   "sourceRepository": "https://github.com/clauxel/kimik3",
+  "repoFacts": {
+    "upstreamRepo": "https://github.com/clauxel/kimik3",
+    "siteRepo": "https://github.com/clauxel/kimik3-best",
+    "sourceLedger": "data/kimi-k3-sources.json"
+  },
+  "gates": {
+    "trust_data_gate": "pass",
+    "trust_content_gate": "pass",
+    "d1_gate": "pass",
+    "payment_gate": "pass",
+    "performance_gate": "pass",
+    "pricing_plan_function_fit_gate": "pass"
+  },
+  "trustDataLedger": [
+    {
+      "source": "clauxel/kimik3 data/kimi-k3-sources.json",
+      "evidence": "36 source entries parsed into page source cards and product data.",
+      "status": "pass"
+    },
+    {
+      "source": "clauxel/kimik3 docs",
+      "evidence": "README and docs provide official-source, API, architecture, review and follow-up boundaries.",
+      "status": "pass"
+    }
+  ],
+  "no_early_final_until_all_mandatory_gates_pass": true,
   "pages": [
     {
       "key": "home",

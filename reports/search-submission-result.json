@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-07-22T18:38:07.038Z",
+  "domain": "kimik3.best",
+  "siteUrl": "https://kimik3.best/",
+  "sitemapUrl": "https://kimik3.best/sitemap.xml",
+  "sitemap": {
+    "status": "live",
+    "urlCount": 9,
+    "submittedUrls": [
+      "https://kimik3.best/",
+      "https://kimik3.best/official-sources/",
+      "https://kimik3.best/api-and-developer/",
+      "https://kimik3.best/architecture/",
+      "https://kimik3.best/reviews-and-media/",
+      "https://kimik3.best/companion-pages/",
+      "https://kimik3.best/follow-up-watchlist/",
+      "https://kimik3.best/privacy/",
+      "https://kimik3.best/terms/"
+    ]
+  },
+  "gsc": {
+    "property": "sc-domain:kimik3.best",
+    "urlPrefixProperty": "https://kimik3.best/",
+    "sitemapUrl": "https://kimik3.best/sitemap.xml",
+    "verification": {
+      "status": "verified",
+      "method": "DNS_TXT",
+      "txtAction": "created",
+      "id": "dns%3A%2F%2Fkimik3.best"
+    },
+    "domainSitemapStatus": "ok:204",
+    "urlPrefixSitemapStatus": "ok:204",
+    "matchingPropertiesAfter": [
+      {
+        "siteUrl": "sc-domain:kimik3.best",
+        "permissionLevel": "siteOwner"
+      },
+      {
+        "siteUrl": "https://kimik3.best/",
+        "permissionLevel": "siteOwner"
+      }
+    ],
+    "status": "submitted"
+  },
+  "bing": {
+    "status": "submitted",
+    "siteUrl": "https://kimik3.best/",
+    "sitemapUrl": "https://kimik3.best/sitemap.xml",
+    "matchingSiteBefore": null,
+    "addSite": {
+      "status": "submitted",
+      "httpStatus": 200,
+      "error": ""
+    },
+    "verification": {
+      "status": "verified",
+      "method": "CNAME",
+      "cnameAction": "created",
+      "attempts": [
+        {
+          "attempt": 1,
+          "verifyStatus": "submitted",
+          "verifyHttpStatus": 200,
+          "verifiedAfter": false,
+          "error": ""
+        },
+        {
+          "attempt": 2,
+          "verifyStatus": "submitted",
+          "verifyHttpStatus": 200,
+          "verifiedAfter": true,
+          "error": ""
+        }
+      ],
+      "matchingSiteAfter": {
+        "url": "https://kimik3.best/",
+        "isVerified": true,
+        "authenticationCodePresent": true,
+        "dnsVerificationCodePresent": true
+      }
+    },
+    "submitFeed": {
+      "status": "submitted",
+      "httpStatus": 200,
+      "error": ""
+    },
+    "submitUrlBatch": {
+      "status": "submitted",
+      "httpStatus": 200,
+      "error": ""
+    },
+    "matchingSiteAfter": {
+      "url": "https://kimik3.best/",
+      "isVerified": true,
+      "authenticationCodePresent": true,
+      "dnsVerificationCodePresent": true
+    }
+  },
+  "indexNow": {
+    "status": "submitted",
+    "httpStatus": 202,
+    "keyLocation": "https://kimik3.best/590a3ab02487cffe4cfd55b0df769f65.txt",
+    "urlCount": 9,
+    "error": ""
+  }
+}

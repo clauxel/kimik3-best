@@ -1,0 +1,304 @@
+{
+  "status": "pass",
+  "generatedAt": "2026-07-22T18:49:21.253Z",
+  "productionUrl": "https://kimik3.best/",
+  "deploy": {
+    "workerName": "kimik3-best",
+    "currentVersion": "edb42573-be26-451b-943d-9bfef18fa6ad",
+    "customRoutes": [
+      "kimik3.best/*",
+      "www.kimik3.best/*"
+    ]
+  },
+  "probes": [
+    {
+      "name": "/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 836,
+      "bytes": 14067,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 2,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/official-sources/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 328,
+      "bytes": 15457,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 2,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/api-and-developer/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 309,
+      "bytes": 15868,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 2,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/architecture/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 255,
+      "bytes": 15359,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 2,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/reviews-and-media/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 359,
+      "bytes": 17510,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 2,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/companion-pages/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 257,
+      "bytes": 15584,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 2,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/follow-up-watchlist/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 252,
+      "bytes": 16997,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 2,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/privacy/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 253,
+      "bytes": 2700,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 1,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/terms/",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 249,
+      "bytes": 2722,
+      "contentType": "text/html",
+      "h1Count": 1,
+      "canonicalOk": true,
+      "videoCount": 1,
+      "imageCount": 1,
+      "explanatoryVideoGate": "pass"
+    },
+    {
+      "name": "/robots.txt",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 315,
+      "bytes": 65,
+      "contentType": "text/plain"
+    },
+    {
+      "name": "/sitemap.xml",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 250,
+      "bytes": 1387,
+      "contentType": "application/xml"
+    },
+    {
+      "name": "/llms.txt",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 251,
+      "bytes": 2146,
+      "contentType": "text/plain"
+    },
+    {
+      "name": "/590a3ab02487cffe4cfd55b0df769f65.txt",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 318,
+      "bytes": 32,
+      "contentType": "text/plain"
+    },
+    {
+      "name": "/api/health",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 626,
+      "bytes": 58,
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "name": "www_redirect",
+      "status": "pass",
+      "httpStatus": 301,
+      "location": "https://kimik3.best/",
+      "elapsedMs": 1114
+    },
+    {
+      "name": "404_noindex",
+      "status": "pass",
+      "httpStatus": 404,
+      "elapsedMs": 309,
+      "hasNoindex": true
+    },
+    {
+      "name": "d1_analytics_event",
+      "status": "pass",
+      "httpStatus": 200,
+      "elapsedMs": 414,
+      "body": {
+        "ok": true,
+        "stored": true
+      }
+    }
+  ],
+  "analytics": {
+    "ok": true,
+    "stored": true
+  },
+  "searchSubmission": {
+    "status": "pass",
+    "gsc": {
+      "domainSitemapStatus": "ok:204",
+      "urlPrefixSitemapStatus": "ok:204"
+    },
+    "bingVerified": true,
+    "indexNowStatus": 202
+  },
+  "completionLedger": [
+    {
+      "id": "source_repo_assessed",
+      "status": "pass",
+      "evidence": "https://github.com/clauxel/kimik3 @ 5598b21"
+    },
+    {
+      "id": "site_build_validation",
+      "status": "pass",
+      "evidence": "generate, media and validate commands passed; 10 pages and 10 videos verified"
+    },
+    {
+      "id": "public_site_repo",
+      "status": "pass",
+      "evidence": "https://github.com/clauxel/kimik3 @ 5598b21; https://github.com/clauxel/kimik3-best"
+    },
+    {
+      "id": "public_docs_source_repo",
+      "status": "pass",
+      "evidence": "https://github.com/clauxel/kimik3 contains the public source ledger used by the site"
+    },
+    {
+      "id": "cloudflare_deploy",
+      "status": "pass",
+      "evidence": "Cloudflare Worker kimik3-best deployed with apex and www routes"
+    },
+    {
+      "id": "dns_https_apex_www",
+      "status": "pass",
+      "evidence": "apex HTTPS 200; www 301 to apex; no parking page detected in production probes"
+    },
+    {
+      "id": "d1_analytics",
+      "status": "pass",
+      "evidence": "same-origin production analytics event returned stored:true"
+    },
+    {
+      "id": "sitemap_robots_llms_index_files",
+      "status": "pass",
+      "evidence": "robots.txt, sitemap.xml, llms.txt and IndexNow key returned 200"
+    },
+    {
+      "id": "gsc_bing_indexnow",
+      "status": "pass",
+      "evidence": "GSC ok:204/ok:204; Bing verified; IndexNow 202"
+    },
+    {
+      "id": "first_screen_visual_qa",
+      "status": "pass",
+      "evidence": "desktop and mobile CDP visual checks passed; screenshots: production-desktop-1440.png, production-mobile-390.png"
+    },
+    {
+      "id": "every_page_explainer_video",
+      "status": "pass",
+      "evidence": "core pages use hero video plus controlled explainer video; privacy, terms and 404 include controlled explainer videos"
+    },
+    {
+      "id": "browser_flow",
+      "status": "pass",
+      "evidence": "local in-app browser QA passed; production CDP fallback passed with explicit desktop and mobile viewports"
+    },
+    {
+      "id": "in_app_browser_production",
+      "status": "blocked_with_evidence",
+      "evidence": "production navigation in the built-in browser timed out, so production visual QA used an isolated CDP browser with captured screenshots and DOM bounds"
+    },
+    {
+      "id": "official_google_trends_keywords",
+      "status": "blocked_with_evidence",
+      "evidence": "Official Google Trends returned 429 Too Many Requests for Kimi K3 checks; no keyword was counted as confirmed traffic volume"
+    },
+    {
+      "id": "automatic_backlinks",
+      "status": "blocked_with_evidence",
+      "evidence": "No third-party backlink success is claimed while official Trends keyword validation is rate-limited; GitHub source and site links are public"
+    },
+    {
+      "id": "report_center",
+      "status": "pass",
+      "evidence": "tools/report-manager/generated/build-guides/2026-07-23/open-source-code-website-build-kimik3-best-production-2026-07-23.html"
+    },
+    {
+      "id": "site_registry",
+      "status": "pass",
+      "evidence": "site-registry record active_cloudflare and includeInPatrol:true"
+    },
+    {
+      "id": "changelog",
+      "status": "pass",
+      "evidence": "WEBSITE_CHANGELOG.md records launch, production verification and search submission"
+    }
+  ],
+  "no_early_final_until_all_mandatory_gates_pass": true,
+  "allMandatoryOpenSourceBuildStepsComplete": true,
+  "completionEnforcementGate": "pass"
+}

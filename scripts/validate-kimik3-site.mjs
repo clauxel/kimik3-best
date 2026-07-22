@@ -110,6 +110,8 @@ assert.equal(product.currentStatus.technicalReport, "pending official release");
 const ledger = JSON.parse(await readFile(join(pub, "data", "kimi-k3-sources.json"), "utf8"));
 assert.equal(ledger.sources.length, 36);
 assert.equal(ledger.status.officialGitHubKimiK3Repo, "not found in current scan");
+const ledgerText = JSON.stringify(ledger);
+for (const pattern of forbidden) assert.doesNotMatch(ledgerText, pattern, "public source ledger leaks private copy");
 
 const manifest = JSON.parse(await readFile(join(pub, "assets", "media", "kimi-k3-media-manifest.json"), "utf8"));
 assert.equal(manifest.pageCount, 10);
@@ -141,6 +143,10 @@ for (const route of [...routes, "privacy", "terms"]) {
 
 const robots = await readFile(join(pub, "robots.txt"), "utf8");
 assert.match(robots, new RegExp(`Sitemap: ${origin.replaceAll(".", "\\.")}/sitemap.xml`));
+
+const indexNowKey = "590a3ab02487cffe4cfd55b0df769f65";
+const indexNowKeyFile = await readFile(join(pub, `${indexNowKey}.txt`), "utf8");
+assert.equal(indexNowKeyFile, indexNowKey, "IndexNow key file mismatch");
 
 console.log(JSON.stringify({
   ok: true,

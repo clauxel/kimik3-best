@@ -1,0 +1,307 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-22T18:49:14.698Z",
+  "fallbackReason": "Codex in-app browser production navigation timed out; CDP headless Chrome used with explicit CSS viewports.",
+  "results": [
+    {
+      "url": "https://kimik3.best/?visualCheck=1784746144731-desktop-1440",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "scrollWidth": 1425,
+      "bodyScrollWidth": 1425,
+      "heroHeight": 900,
+      "boxes": [
+        {
+          "selector": ".site-header",
+          "display": "flex",
+          "visibility": "visible",
+          "text": "Kimi K3 Best\nSource Map\nOfficial\nAPI\nArchitecture\nReviews\nWatchlist",
+          "left": 0,
+          "right": 1425,
+          "top": 0,
+          "bottom": 72,
+          "width": 1425,
+          "height": 72,
+          "inViewport": true
+        },
+        {
+          "selector": ".brand",
+          "display": "flex",
+          "visibility": "visible",
+          "text": "Kimi K3 Best\nSource Map",
+          "left": 90,
+          "right": 295,
+          "top": 22,
+          "bottom": 50,
+          "width": 205,
+          "height": 28,
+          "inViewport": true
+        },
+        {
+          "selector": "nav",
+          "display": "flex",
+          "visibility": "visible",
+          "text": "Official\nAPI\nArchitecture\nReviews\nWatchlist",
+          "left": 1004,
+          "right": 1335,
+          "top": 28,
+          "bottom": 44,
+          "width": 331,
+          "height": 16,
+          "inViewport": true
+        },
+        {
+          "selector": ".hero",
+          "display": "grid",
+          "visibility": "visible",
+          "text": "36-SOURCE KIMI K3 RESEARCH NAVIGATOR\n\nKimi K3 Best Source Map\n\nTrack what is official, what is developer-ready and what ",
+          "left": 0,
+          "right": 1425,
+          "top": 0,
+          "bottom": 900,
+          "width": 1425,
+          "height": 900,
+          "inViewport": true
+        },
+        {
+          "selector": ".eyebrow",
+          "display": "block",
+          "visibility": "visible",
+          "text": "36-SOURCE KIMI K3 RESEARCH NAVIGATOR",
+          "left": 90,
+          "right": 925,
+          "top": 436,
+          "bottom": 450,
+          "width": 835,
+          "height": 14,
+          "inViewport": true
+        },
+        {
+          "selector": ".hero h1",
+          "display": "block",
+          "visibility": "visible",
+          "text": "Kimi K3 Best Source Map",
+          "left": 90,
+          "right": 925,
+          "top": 462,
+          "bottom": 639,
+          "width": 835,
+          "height": 177,
+          "inViewport": true
+        },
+        {
+          "selector": ".lead",
+          "display": "block",
+          "visibility": "visible",
+          "text": "Track what is official, what is developer-ready and what still needs verification before you quote, build with or compar",
+          "left": 90,
+          "right": 810,
+          "top": 663,
+          "bottom": 728,
+          "width": 720,
+          "height": 65,
+          "inViewport": true
+        },
+        {
+          "selector": ".hero-actions",
+          "display": "flex",
+          "visibility": "visible",
+          "text": "Open official sources\nPlan an API build",
+          "left": 90,
+          "right": 925,
+          "top": 762,
+          "bottom": 808,
+          "width": 835,
+          "height": 46,
+          "inViewport": true
+        },
+        {
+          "selector": ".hero-panel",
+          "display": "block",
+          "visibility": "visible",
+          "text": "36\nsources organized\n01\nOfficial facts\n02\nAPI shape\n03\nArchitecture trail\n04\nReview boundary\n05\nWatch queue",
+          "left": 965,
+          "right": 1335,
+          "top": 568,
+          "bottom": 836,
+          "width": 370,
+          "height": 268,
+          "inViewport": true
+        }
+      ],
+      "videos": [
+        {
+          "src": "https://kimik3.best/assets/media/kimi-k3-best-home.webm",
+          "readyState": 4,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "https://kimik3.best/assets/media/kimi-k3-best-home.webm",
+          "readyState": 4,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewport": {
+        "name": "desktop-1440",
+        "width": 1440,
+        "height": 900,
+        "mobile": false
+      },
+      "screenshotPath": "reports/screenshots/production-desktop-1440.png",
+      "clipped": [],
+      "status": "pass"
+    },
+    {
+      "url": "https://kimik3.best/?visualCheck=1784746150082-mobile-390",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "heroHeight": 844,
+      "boxes": [
+        {
+          "selector": ".site-header",
+          "display": "flex",
+          "visibility": "visible",
+          "text": "Kimi K3 Best\nOfficial\nAPI",
+          "left": 0,
+          "right": 390,
+          "top": 0,
+          "bottom": 66,
+          "width": 390,
+          "height": 66,
+          "inViewport": true
+        },
+        {
+          "selector": ".brand",
+          "display": "flex",
+          "visibility": "visible",
+          "text": "Kimi K3 Best",
+          "left": 16,
+          "right": 146,
+          "top": 19,
+          "bottom": 47,
+          "width": 130,
+          "height": 28,
+          "inViewport": true
+        },
+        {
+          "selector": "nav",
+          "display": "flex",
+          "visibility": "visible",
+          "text": "Official\nAPI",
+          "left": 305,
+          "right": 374,
+          "top": 25,
+          "bottom": 40,
+          "width": 69,
+          "height": 15,
+          "inViewport": true
+        },
+        {
+          "selector": ".hero",
+          "display": "grid",
+          "visibility": "visible",
+          "text": "36-SOURCE KIMI K3 RESEARCH NAVIGATOR\n\nKimi K3 Best Source Map\n\nTrack what is official, what is developer-ready and what ",
+          "left": 0,
+          "right": 390,
+          "top": 0,
+          "bottom": 844,
+          "width": 390,
+          "height": 844,
+          "inViewport": true
+        },
+        {
+          "selector": ".eyebrow",
+          "display": "block",
+          "visibility": "visible",
+          "text": "36-SOURCE KIMI K3 RESEARCH NAVIGATOR",
+          "left": 18,
+          "right": 372,
+          "top": 145,
+          "bottom": 159,
+          "width": 354,
+          "height": 14,
+          "inViewport": true
+        },
+        {
+          "selector": ".hero h1",
+          "display": "block",
+          "visibility": "visible",
+          "text": "Kimi K3 Best Source Map",
+          "left": 18,
+          "right": 372,
+          "top": 171,
+          "bottom": 244,
+          "width": 354,
+          "height": 73,
+          "inViewport": true
+        },
+        {
+          "selector": ".lead",
+          "display": "block",
+          "visibility": "visible",
+          "text": "Track what is official, what is developer-ready and what still needs verification before you quote, build with or compar",
+          "left": 18,
+          "right": 372,
+          "top": 268,
+          "bottom": 342,
+          "width": 354,
+          "height": 74,
+          "inViewport": true
+        },
+        {
+          "selector": ".hero-actions",
+          "display": "flex",
+          "visibility": "visible",
+          "text": "Open official sources\nPlan an API build",
+          "left": 18,
+          "right": 372,
+          "top": 376,
+          "bottom": 480,
+          "width": 354,
+          "height": 104,
+          "inViewport": true
+        },
+        {
+          "selector": ".hero-panel",
+          "display": "block",
+          "visibility": "visible",
+          "text": "36\nsources organized\n01\nOfficial facts\n02\nAPI shape\n03\nArchitecture trail\n04\nReview boundary\n05\nWatch queue",
+          "left": 18,
+          "right": 372,
+          "top": 535,
+          "bottom": 790,
+          "width": 354,
+          "height": 255,
+          "inViewport": true
+        }
+      ],
+      "videos": [
+        {
+          "src": "https://kimik3.best/assets/media/kimi-k3-best-home.webm",
+          "readyState": 4,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "https://kimik3.best/assets/media/kimi-k3-best-home.webm",
+          "readyState": 4,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewport": {
+        "name": "mobile-390",
+        "width": 390,
+        "height": 844,
+        "mobile": true
+      },
+      "screenshotPath": "reports/screenshots/production-mobile-390.png",
+      "clipped": [],
+      "status": "pass"
+    }
+  ]
+}

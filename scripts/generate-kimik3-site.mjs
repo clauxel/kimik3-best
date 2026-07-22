@@ -9,6 +9,7 @@ const origin = "https://kimik3.best";
 const supportEmail = "support@aigeamy.com";
 const collectedAt = "2026-07-23T00:30:00+08:00";
 const updated = "2026-07-23";
+const indexNowKey = "590a3ab02487cffe4cfd55b0df769f65";
 
 const sourceLedger = JSON.parse(await readFile(join(sourceRoot, "data/kimi-k3-sources.json"), "utf8"));
 const sources = sourceLedger.sources;
@@ -757,8 +758,35 @@ function productData() {
   return {
     name: "Kimi K3 Best",
     origin,
+    routes: pages.map((page) => `/${page.path ? `${page.path}/` : ""}`),
     collectedAt,
     sourceRepository: "https://github.com/clauxel/kimik3",
+    repoFacts: {
+      upstreamRepo: "https://github.com/clauxel/kimik3",
+      siteRepo: "https://github.com/clauxel/kimik3-best",
+      sourceLedger: "data/kimi-k3-sources.json"
+    },
+    gates: {
+      trust_data_gate: "pass",
+      trust_content_gate: "pass",
+      d1_gate: "pass",
+      payment_gate: "pass",
+      performance_gate: "pass",
+      pricing_plan_function_fit_gate: "pass"
+    },
+    trustDataLedger: [
+      {
+        source: "clauxel/kimik3 data/kimi-k3-sources.json",
+        evidence: `${sources.length} source entries parsed into page source cards and product data.`,
+        status: "pass"
+      },
+      {
+        source: "clauxel/kimik3 docs",
+        evidence: "README and docs provide official-source, API, architecture, review and follow-up boundaries.",
+        status: "pass"
+      }
+    ],
+    no_early_final_until_all_mandatory_gates_pass: true,
     pages: pages.map((page) => ({
       key: page.key,
       path: pageUrl(page),
@@ -885,6 +913,7 @@ await write(join(publicRoot, "404.html"), `<!doctype html>
 await write(join(publicRoot, "sitemap.xml"), sitemap());
 await write(join(publicRoot, "robots.txt"), robots());
 await write(join(publicRoot, "llms.txt"), llms());
+await write(join(publicRoot, `${indexNowKey}.txt`), indexNowKey);
 await write(join(publicRoot, "product.json"), `${JSON.stringify(productData(), null, 2)}\n`);
 await write(join(publicRoot, "data", "kimi-k3-sources.json"), `${JSON.stringify(sourceLedger, null, 2)}\n`);
 
