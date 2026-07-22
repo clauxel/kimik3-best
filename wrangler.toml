@@ -1,0 +1,24 @@
+name = "kimik3-best"
+main = "worker/index.js"
+compatibility_date = "2026-07-19"
+workers_dev = true
+routes = [
+  { pattern = "kimik3.best/*", zone_name = "kimik3.best" },
+  { pattern = "www.kimik3.best/*", zone_name = "kimik3.best" }
+]
+
+[vars]
+APP_ORIGIN = "https://kimik3.best"
+CANONICAL_HOST = "kimik3.best"
+
+[assets]
+directory = "./public"
+binding = "SITE_ASSETS"
+not_found_handling = "404-page"
+run_worker_first = ["/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kimik3-best-analytics"
+database_id = "a20f5b22-b956-467d-8322-df10da3296e9"
+migrations_dir = "migrations"

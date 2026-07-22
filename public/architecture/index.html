@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kimi K3 Architecture Trail - KDA, Attention Residuals and FlashKDA</title>
+  <meta name="description" content="A Kimi K3 architecture trail through Kimi Linear, Kimi Delta Attention, Attention Residuals, FlashKDA and official implementation repositories.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://kimik3.best/architecture/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kimi K3 Best">
+  <meta property="og:title" content="Kimi K3 Architecture Trail - KDA, Attention Residuals and FlashKDA">
+  <meta property="og:description" content="A Kimi K3 architecture trail through Kimi Linear, Kimi Delta Attention, Attention Residuals, FlashKDA and official implementation repositories.">
+  <meta property="og:url" content="https://kimik3.best/architecture/">
+  <meta property="og:image" content="https://kimik3.best/assets/media/kimi-k3-best-architecture.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kimi K3 Architecture Trail - KDA, Attention Residuals and FlashKDA">
+  <meta name="twitter:description" content="A Kimi K3 architecture trail through Kimi Linear, Kimi Delta Attention, Attention Residuals, FlashKDA and official implementation repositories.">
+  <meta name="theme-color" content="#090907">
+  <link rel="preload" href="/assets/media/kimi-k3-best-architecture.webm" as="video" type="video/webm">
+  <link rel="stylesheet" href="/assets/k3.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kimi K3 Architecture Trail","description":"A Kimi K3 architecture trail through Kimi Linear, Kimi Delta Attention, Attention Residuals, FlashKDA and official implementation repositories.","url":"https://kimik3.best/architecture/","dateModified":"2026-07-23","isPartOf":{"@type":"WebSite","name":"Kimi K3 Best","url":"https://kimik3.best"},"mainEntity":{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kimi Delta Attention is the key architecture thread","acceptedAnswer":{"@type":"Answer","text":"The Kimi Linear paper introduces KDA and reports up to 75% KV-cache reduction and up to 6x decoding throughput at 1M context in the paper setting. The K3 page points to KDA as part of the model architecture."}},{"@type":"Question","name":"Attention Residuals explain the other named component","acceptedAnswer":{"@type":"Answer","text":"The Attention Residuals paper and repository describe cross-layer attention for reducing information dilution in deep PreNorm models, plus Block AttnRes for large-scale training efficiency."}},{"@type":"Question","name":"FlashKDA is the implementation bridge","acceptedAnswer":{"@type":"Answer","text":"FlashKDA is an official MoonshotAI kernel repository. It is useful for understanding engineering direction, and it becomes more important after official K3 weights and inference notes can be verified."}}]},"about":[{"@type":"CreativeWork","name":"Kimi Linear: An Expressive, Efficient Attention Architecture","url":"https://arxiv.org/abs/2510.26692"},{"@type":"CreativeWork","name":"Attention Residuals","url":"https://arxiv.org/abs/2603.15031"},{"@type":"CreativeWork","name":"MoonshotAI/Attention-Residuals","url":"https://github.com/MoonshotAI/Attention-Residuals"},{"@type":"CreativeWork","name":"MoonshotAI/FlashKDA","url":"https://github.com/MoonshotAI/FlashKDA"},{"@type":"CreativeWork","name":"Hugging Face Kimi Linear collection","url":"https://huggingface.co/moonshotai/collections"},{"@type":"CreativeWork","name":"MoonshotAI GitHub organization","url":"https://github.com/MoonshotAI"}]}</script>
+</head>
+<body class="page-architecture">
+  <header class="site-header" data-track-zone="nav">
+    <a class="brand" href="/" aria-label="Kimi K3 Best home"><span class="brand-mark"></span><b>Kimi K3 Best</b><small>Source Map</small></a>
+    <nav aria-label="Primary navigation"><a href="/official-sources/">Official</a><a href="/api-and-developer/">API</a><a href="/architecture/" aria-current="page">Architecture</a><a href="/reviews-and-media/">Reviews</a><a href="/follow-up-watchlist/">Watchlist</a></nav>
+  </header>
+  <main>
+    <section class="hero hero-architecture" style="--accent:#8f7cff">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/media/kimi-k3-best-architecture-poster.png" aria-label="Kimi K3 Architecture Trail explainer background">
+      <source src="/assets/media/kimi-k3-best-architecture.webm" type="video/webm">
+    </video>
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Papers and official implementations</p>
+      <h1>Kimi K3 Architecture Trail</h1>
+      <p class="lead">Follow the research and implementation sources that explain the architecture terms used in the Kimi K3 launch materials.</p>
+      <div class="hero-actions">
+        <a class="primary" href="/reviews-and-media/" data-track="internal_link">Read external reviews</a>
+        <a href="/follow-up-watchlist/" data-track="internal_link">Track weight release</a>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-label="Kimi K3 Architecture Trail quick facts">
+      <div class="hero-stat"><strong>7</strong><span>paper and repo entries</span></div>
+      <ol><li><span>01</span>KDA</li><li><span>02</span>AttnRes</li><li><span>03</span>FlashKDA</li><li><span>04</span>HF collection</li><li><span>05</span>Weight watch</li></ol>
+    </aside>
+    <a class="scroll-cue" href="#overview" aria-label="Scroll to overview">Explore</a>
+  </section>
+    <section class="explainer" id="overview" style="--accent:#8f7cff">
+    <div class="section-heading">
+      <span>Page explainer</span>
+      <h2>Kimi K3 Architecture Trail in motion</h2>
+      <p>This short video summarizes the page: the source set, the decision boundary and the practical next action.</p>
+    </div>
+    <div class="video-shell">
+      <video class="motion-source" controls muted loop playsinline preload="metadata" poster="/assets/media/kimi-k3-best-architecture-poster.png">
+        <source src="/assets/media/kimi-k3-best-architecture.webm" type="video/webm">
+      </video>
+      <img src="/assets/media/kimi-k3-best-architecture.png" width="1280" height="720" alt="Kimi K3 Architecture Trail visual summary">
+    </div>
+  </section>
+    <section class="story-grid" aria-label="Kimi K3 Architecture Trail guide">
+    <article class="story">
+      <div class="story-copy">
+        <span class="section-index">01</span>
+        <h2>Kimi Delta Attention is the key architecture thread</h2>
+        <p>The Kimi Linear paper introduces KDA and reports up to 75% KV-cache reduction and up to 6x decoding throughput at 1M context in the paper setting. The K3 page points to KDA as part of the model architecture.</p>
+      </div>
+      <figure class="story-visual" aria-label="Kimi Delta Attention is the key architecture thread visual">
+    <div class="visual-board">
+      <span class="visual-kicker">01 · KDA</span>
+      <strong>Read KDA as a research lineage, not as a standalone deployment promise for K3 weights.</strong>
+      <div class="visual-rings" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="visual-bars" aria-hidden="true"><b style="--i:0">KDA</b><b style="--i:1">AttnRes</b><b style="--i:2">FlashKDA</b><b style="--i:3">HF collection</b><b style="--i:4">Weight watch</b></div>
+    </div>
+  </figure>
+    </article><article class="story">
+      <div class="story-copy">
+        <span class="section-index">02</span>
+        <h2>Attention Residuals explain the other named component</h2>
+        <p>The Attention Residuals paper and repository describe cross-layer attention for reducing information dilution in deep PreNorm models, plus Block AttnRes for large-scale training efficiency.</p>
+      </div>
+      <figure class="story-visual" aria-label="Attention Residuals explain the other named component visual">
+    <div class="visual-board">
+      <span class="visual-kicker">02 · AttnRes</span>
+      <strong>The diagram pairs deep-layer signal flow with the official repository and paper.</strong>
+      <div class="visual-rings" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="visual-bars" aria-hidden="true"><b style="--i:0">KDA</b><b style="--i:1">AttnRes</b><b style="--i:2">FlashKDA</b><b style="--i:3">HF collection</b><b style="--i:4">Weight watch</b></div>
+    </div>
+  </figure>
+    </article><article class="story">
+      <div class="story-copy">
+        <span class="section-index">03</span>
+        <h2>FlashKDA is the implementation bridge</h2>
+        <p>FlashKDA is an official MoonshotAI kernel repository. It is useful for understanding engineering direction, and it becomes more important after official K3 weights and inference notes can be verified.</p>
+      </div>
+      <figure class="story-visual" aria-label="FlashKDA is the implementation bridge visual">
+    <div class="visual-board">
+      <span class="visual-kicker">03 · FlashKDA</span>
+      <strong>Kernel, model-hosting and vLLM support should be revisited when official weights are published.</strong>
+      <div class="visual-rings" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="visual-bars" aria-hidden="true"><b style="--i:0">KDA</b><b style="--i:1">AttnRes</b><b style="--i:2">FlashKDA</b><b style="--i:3">HF collection</b><b style="--i:4">Weight watch</b></div>
+    </div>
+  </figure>
+    </article>
+  </section>
+    <section class="instrument architecture-tool" id="tool" data-tool="architecture-map">
+    <div class="tool-copy">
+      <span>Architecture map</span>
+      <h2>Trace the named K3 components</h2>
+      <p>The map links KDA, Attention Residuals and FlashKDA to the supporting paper or official implementation source.</p>
+    </div>
+    <div class="arch-map" aria-label="Kimi K3 architecture map">
+      <button type="button" data-arch="kda" class="is-active">KDA</button>
+      <button type="button" data-arch="attnres">Attention Residuals</button>
+      <button type="button" data-arch="flashkda">FlashKDA</button>
+      <output id="archOutput">KDA comes from Kimi Linear and is the main attention-efficiency thread referenced by K3 materials.</output>
+    </div>
+  </section>
+    <section class="source-section" aria-label="Kimi K3 Architecture Trail sources">
+    <div class="section-heading">
+      <span>Source cards</span>
+      <h2>Sources used on this page</h2>
+      <p>Cards are generated from the clauxel/kimik3 source ledger and keep source type, priority and status visible.</p>
+    </div>
+    <div class="source-grid"><article class="source-card" data-category="paper" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · arXiv paper</p>
+      <h3>Kimi Linear: An Expressive, Efficient Attention Architecture</h3>
+      <p>Kimi Linear paper introducing Kimi Delta Attention, the architecture thread the K3 launch page points back to.</p>
+    </div>
+    <a href="https://arxiv.org/abs/2510.26692" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="paper" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · arXiv paper</p>
+      <h3>Attention Residuals</h3>
+      <p>Attention Residuals paper describing cross-layer attention as an alternative to fixed residual accumulation.</p>
+    </div>
+    <a href="https://arxiv.org/abs/2603.15031" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="official repos" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · official GitHub repo</p>
+      <h3>MoonshotAI/Attention-Residuals</h3>
+      <p>Official repository with paper, pseudocode and evaluation summaries for Attention Residuals.</p>
+    </div>
+    <a href="https://github.com/MoonshotAI/Attention-Residuals" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="official repos" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · official GitHub repo</p>
+      <h3>MoonshotAI/FlashKDA</h3>
+      <p>Official FlashKDA kernel implementation that links the KDA research line to inference engineering.</p>
+    </div>
+    <a href="https://github.com/MoonshotAI/FlashKDA" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="paper" data-status="verified" data-priority="P1">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P1 · Verified · official HF collection</p>
+      <h3>Hugging Face Kimi Linear collection</h3>
+      <p>Moonshot Hugging Face collection for Kimi Linear checkpoints and paper references.</p>
+    </div>
+    <a href="https://huggingface.co/moonshotai/collections" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="official repos" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · official GitHub organization</p>
+      <h3>MoonshotAI GitHub organization</h3>
+      <p>Official MoonshotAI GitHub organization, useful for tracking Kimi Code, Kimi CLI, K2 lines, Attention Residuals and FlashKDA.</p>
+    </div>
+    <a href="https://github.com/MoonshotAI" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article></div>
+  </section>
+    <section class="related" aria-label="Related pages">
+    <p>Continue the map</p>
+    <div><a href="/" data-track="internal_link">
+      <span>36-source Kimi K3 research navigator</span>
+      <strong>Kimi K3 Best Source Map</strong>
+    </a><a href="/official-sources/" data-track="internal_link">
+      <span>Official facts before secondary claims</span>
+      <strong>Kimi K3 Official Sources</strong>
+    </a><a href="/api-and-developer/" data-track="internal_link">
+      <span>Build planning from official docs</span>
+      <strong>Kimi K3 API and Developer Notes</strong>
+    </a></div>
+  </section>
+  </main>
+  <footer>
+    <a href="/">Kimi K3 Best</a>
+    <p>Independent source-first Kimi K3 map generated from the public clauxel/kimik3 research ledger. Official facts, secondary reviews and pending checks are labeled separately.</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="mailto:support@aigeamy.com">support@aigeamy.com</a></p>
+  </footer>
+  <script src="/assets/k3.js" defer></script>
+</body>
+</html>

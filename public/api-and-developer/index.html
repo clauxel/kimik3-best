@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kimi K3 API and Developer Notes - Pricing, Context and Model IDs</title>
+  <meta name="description" content="Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://kimik3.best/api-and-developer/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kimi K3 Best">
+  <meta property="og:title" content="Kimi K3 API and Developer Notes - Pricing, Context and Model IDs">
+  <meta property="og:description" content="Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
+  <meta property="og:url" content="https://kimik3.best/api-and-developer/">
+  <meta property="og:image" content="https://kimik3.best/assets/media/kimi-k3-best-api.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kimi K3 API and Developer Notes - Pricing, Context and Model IDs">
+  <meta name="twitter:description" content="Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
+  <meta name="theme-color" content="#090907">
+  <link rel="preload" href="/assets/media/kimi-k3-best-api.webm" as="video" type="video/webm">
+  <link rel="stylesheet" href="/assets/k3.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kimi K3 API and Developer Notes","description":"Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.","url":"https://kimik3.best/api-and-developer/","dateModified":"2026-07-23","isPartOf":{"@type":"WebSite","name":"Kimi K3 Best","url":"https://kimik3.best"},"mainEntity":{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"API shape and model examples","acceptedAnswer":{"@type":"Answer","text":"The source ledger records the official quickstart as OpenAI-compatible, with base_url set to https://api.moonshot.ai/v1 and example model kimi-k3. Kimi Code uses separate coding endpoints and model configuration."}},{"@type":"Question","name":"Reasoning and context controls matter","acceptedAnswer":{"@type":"Answer","text":"The K3 API guide notes that K3 always thinks. Developers can adjust reasoning_effort across low, high and max, and can set max_completion_tokens up to 1,048,576 when a workflow needs the long context ceiling."}},{"@type":"Question","name":"Pricing must be rechecked before production","acceptedAnswer":{"@type":"Answer","text":"At collection time, the API platform showed cache hit $0.30/MTok, input $3.00/MTok and output $15.00/MTok. Treat those as planning defaults and verify the current platform page before billing decisions."}}]},"about":[{"@type":"CreativeWork","name":"Kimi API Platform homepage","url":"https://platform.kimi.ai/"},{"@type":"CreativeWork","name":"Kimi API Quickstart","url":"https://platform.kimi.ai/docs/overview"},{"@type":"CreativeWork","name":"Kimi K3 API guide","url":"https://platform.kimi.ai/docs/guide/kimi-k3-quickstart"},{"@type":"CreativeWork","name":"Flagship Model Kimi K3 Pricing","url":"https://platform.kimi.ai/docs/pricing/chat-k3"},{"@type":"CreativeWork","name":"Kimi Code model configuration","url":"https://www.kimi.com/code/docs/en/kimi-code/models.html"},{"@type":"CreativeWork","name":"Kimi Code What’s New","url":"https://www.kimi.com/code/docs/en/kimi-code/whats-new.html"}]}</script>
+</head>
+<body class="page-api">
+  <header class="site-header" data-track-zone="nav">
+    <a class="brand" href="/" aria-label="Kimi K3 Best home"><span class="brand-mark"></span><b>Kimi K3 Best</b><small>Source Map</small></a>
+    <nav aria-label="Primary navigation"><a href="/official-sources/">Official</a><a href="/api-and-developer/" aria-current="page">API</a><a href="/architecture/">Architecture</a><a href="/reviews-and-media/">Reviews</a><a href="/follow-up-watchlist/">Watchlist</a></nav>
+  </header>
+  <main>
+    <section class="hero hero-api" style="--accent:#ff6f61">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/media/kimi-k3-best-api-poster.png" aria-label="Kimi K3 API and Developer Notes explainer background">
+      <source src="/assets/media/kimi-k3-best-api.webm" type="video/webm">
+    </video>
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Build planning from official docs</p>
+      <h1>Kimi K3 API and Developer Notes</h1>
+      <p class="lead">Translate the Kimi API and Kimi Code entries into a concrete build checklist: endpoint shape, reasoning effort, context settings, token cost planning and current caveats.</p>
+      <div class="hero-actions">
+        <a class="primary" href="/architecture/" data-track="internal_link">Read architecture</a>
+        <a href="/official-sources/" data-track="internal_link">Review official pages</a>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-label="Kimi K3 API and Developer Notes quick facts">
+      <div class="hero-stat"><strong>6</strong><span>developer entries</span></div>
+      <ol><li><span>01</span>Base URL</li><li><span>02</span>Reasoning effort</li><li><span>03</span>1M context</li><li><span>04</span>Vision input</li><li><span>05</span>Cost plan</li></ol>
+    </aside>
+    <a class="scroll-cue" href="#overview" aria-label="Scroll to overview">Explore</a>
+  </section>
+    <section class="explainer" id="overview" style="--accent:#ff6f61">
+    <div class="section-heading">
+      <span>Page explainer</span>
+      <h2>Kimi K3 API and Developer Notes in motion</h2>
+      <p>This short video summarizes the page: the source set, the decision boundary and the practical next action.</p>
+    </div>
+    <div class="video-shell">
+      <video class="motion-source" controls muted loop playsinline preload="metadata" poster="/assets/media/kimi-k3-best-api-poster.png">
+        <source src="/assets/media/kimi-k3-best-api.webm" type="video/webm">
+      </video>
+      <img src="/assets/media/kimi-k3-best-api.png" width="1280" height="720" alt="Kimi K3 API and Developer Notes visual summary">
+    </div>
+  </section>
+    <section class="story-grid" aria-label="Kimi K3 API and Developer Notes guide">
+    <article class="story">
+      <div class="story-copy">
+        <span class="section-index">01</span>
+        <h2>API shape and model examples</h2>
+        <p>The source ledger records the official quickstart as OpenAI-compatible, with base_url set to https://api.moonshot.ai/v1 and example model kimi-k3. Kimi Code uses separate coding endpoints and model configuration.</p>
+      </div>
+      <figure class="story-visual" aria-label="API shape and model examples visual">
+    <div class="visual-board">
+      <span class="visual-kicker">01 · Base URL</span>
+      <strong>A build can start OpenAI-compatible, then branch for Kimi Code endpoints when coding tools need them.</strong>
+      <div class="visual-rings" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="visual-bars" aria-hidden="true"><b style="--i:0">Base URL</b><b style="--i:1">Reasoning effort</b><b style="--i:2">1M context</b><b style="--i:3">Vision input</b><b style="--i:4">Cost plan</b></div>
+    </div>
+  </figure>
+    </article><article class="story">
+      <div class="story-copy">
+        <span class="section-index">02</span>
+        <h2>Reasoning and context controls matter</h2>
+        <p>The K3 API guide notes that K3 always thinks. Developers can adjust reasoning_effort across low, high and max, and can set max_completion_tokens up to 1,048,576 when a workflow needs the long context ceiling.</p>
+      </div>
+      <figure class="story-visual" aria-label="Reasoning and context controls matter visual">
+    <div class="visual-board">
+      <span class="visual-kicker">02 · Reasoning effort</span>
+      <strong>The planner below lets teams test token volume against the recorded price points.</strong>
+      <div class="visual-rings" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="visual-bars" aria-hidden="true"><b style="--i:0">Base URL</b><b style="--i:1">Reasoning effort</b><b style="--i:2">1M context</b><b style="--i:3">Vision input</b><b style="--i:4">Cost plan</b></div>
+    </div>
+  </figure>
+    </article><article class="story">
+      <div class="story-copy">
+        <span class="section-index">03</span>
+        <h2>Pricing must be rechecked before production</h2>
+        <p>At collection time, the API platform showed cache hit $0.30/MTok, input $3.00/MTok and output $15.00/MTok. Treat those as planning defaults and verify the current platform page before billing decisions.</p>
+      </div>
+      <figure class="story-visual" aria-label="Pricing must be rechecked before production visual">
+    <div class="visual-board">
+      <span class="visual-kicker">03 · 1M context</span>
+      <strong>Cost cards show separate cache, input and output meters because K3 pricing is not one flat token rate.</strong>
+      <div class="visual-rings" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="visual-bars" aria-hidden="true"><b style="--i:0">Base URL</b><b style="--i:1">Reasoning effort</b><b style="--i:2">1M context</b><b style="--i:3">Vision input</b><b style="--i:4">Cost plan</b></div>
+    </div>
+  </figure>
+    </article>
+  </section>
+    <section class="instrument api-cost-tool" id="tool" data-tool="api-cost">
+    <div class="tool-copy">
+      <span>API cost planner</span>
+      <h2>Estimate a Kimi K3 API scenario</h2>
+      <p>Defaults come from the source ledger's API platform snapshot. Recheck the official platform before production billing.</p>
+    </div>
+    <div class="tool-panel grid-inputs">
+      <label>Cache hit $/MTok <input id="cacheRate" type="number" step="0.01" min="0" value="0.30"></label>
+      <label>Input $/MTok <input id="inputRate" type="number" step="0.01" min="0" value="3.00"></label>
+      <label>Output $/MTok <input id="outputRate" type="number" step="0.01" min="0" value="15.00"></label>
+      <label>Cache tokens / month <input id="cacheTokens" type="number" min="0" value="50000000"></label>
+      <label>Input tokens / month <input id="inputTokens" type="number" min="0" value="25000000"></label>
+      <label>Output tokens / month <input id="outputTokens" type="number" min="0" value="6000000"></label>
+      <output id="costOutput">Estimated monthly API spend: $0.00</output>
+    </div>
+  </section>
+    <section class="source-section" aria-label="Kimi K3 API and Developer Notes sources">
+    <div class="section-heading">
+      <span>Source cards</span>
+      <h2>Sources used on this page</h2>
+      <p>Cards are generated from the clauxel/kimik3 source ledger and keep source type, priority and status visible.</p>
+    </div>
+    <div class="source-grid"><article class="source-card" data-category="api" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · official API platform</p>
+      <h3>Kimi API Platform homepage</h3>
+      <p>Official API platform entry listing Kimi K3 as the flagship model and showing current public price points at collection time.</p>
+    </div>
+    <a href="https://platform.kimi.ai/" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="api" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · official API docs</p>
+      <h3>Kimi API Quickstart</h3>
+      <p>Official quickstart with OpenAI-compatible API shape, base URL and a Kimi K3 example model.</p>
+    </div>
+    <a href="https://platform.kimi.ai/docs/overview" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="api" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · official API docs</p>
+      <h3>Kimi K3 API guide</h3>
+      <p>Official K3 API guide covering reasoning effort, streaming, vision input, structured output, tool choice, dynamic tools and 1M context limits.</p>
+    </div>
+    <a href="https://platform.kimi.ai/docs/guide/kimi-k3-quickstart" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="api" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · official API pricing</p>
+      <h3>Flagship Model Kimi K3 Pricing</h3>
+      <p>Official K3 pricing reference for pay-as-you-go billing, cache hit, input and output metering.</p>
+    </div>
+    <a href="https://platform.kimi.ai/docs/pricing/chat-k3" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="developer tools" data-status="verified" data-priority="P0">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P0 · Verified · official Kimi Code docs</p>
+      <h3>Kimi Code model configuration</h3>
+      <p>Official Kimi Code model configuration page with model IDs, context configuration and compatible coding endpoints.</p>
+    </div>
+    <a href="https://www.kimi.com/code/docs/en/kimi-code/models.html" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article><article class="source-card" data-category="developer tools" data-status="verified" data-priority="P1">
+    <div class="source-spark" aria-hidden="true"><span></span><i></i></div>
+    <div>
+      <p class="source-meta">P1 · Verified · official Kimi Code docs</p>
+      <h3>Kimi Code What’s New</h3>
+      <p>Official changelog showing the K3 release window and model-list refresh behavior for API-key users.</p>
+    </div>
+    <a href="https://www.kimi.com/code/docs/en/kimi-code/whats-new.html" rel="noopener noreferrer" target="_blank" data-track="source_card">Open source</a>
+  </article></div>
+  </section>
+    <section class="related" aria-label="Related pages">
+    <p>Continue the map</p>
+    <div><a href="/" data-track="internal_link">
+      <span>36-source Kimi K3 research navigator</span>
+      <strong>Kimi K3 Best Source Map</strong>
+    </a><a href="/official-sources/" data-track="internal_link">
+      <span>Official facts before secondary claims</span>
+      <strong>Kimi K3 Official Sources</strong>
+    </a><a href="/architecture/" data-track="internal_link">
+      <span>Papers and official implementations</span>
+      <strong>Kimi K3 Architecture Trail</strong>
+    </a></div>
+  </section>
+  </main>
+  <footer>
+    <a href="/">Kimi K3 Best</a>
+    <p>Independent source-first Kimi K3 map generated from the public clauxel/kimik3 research ledger. Official facts, secondary reviews and pending checks are labeled separately.</p>
+    <p><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="mailto:support@aigeamy.com">support@aigeamy.com</a></p>
+  </footer>
+  <script src="/assets/k3.js" defer></script>
+</body>
+</html>

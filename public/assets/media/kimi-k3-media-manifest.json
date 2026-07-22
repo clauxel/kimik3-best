@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-07-22T17:58:12.198Z",
+  "pageCount": 10,
+  "durationSeconds": 12,
+  "files": {
+    "home": {
+      "image": "kimi-k3-best-home.png",
+      "poster": "kimi-k3-best-home-poster.png",
+      "video": "kimi-k3-best-home.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "official": {
+      "image": "kimi-k3-best-official.png",
+      "poster": "kimi-k3-best-official-poster.png",
+      "video": "kimi-k3-best-official.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "api": {
+      "image": "kimi-k3-best-api.png",
+      "poster": "kimi-k3-best-api-poster.png",
+      "video": "kimi-k3-best-api.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "architecture": {
+      "image": "kimi-k3-best-architecture.png",
+      "poster": "kimi-k3-best-architecture-poster.png",
+      "video": "kimi-k3-best-architecture.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "reviews": {
+      "image": "kimi-k3-best-reviews.png",
+      "poster": "kimi-k3-best-reviews-poster.png",
+      "video": "kimi-k3-best-reviews.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "companion": {
+      "image": "kimi-k3-best-companion.png",
+      "poster": "kimi-k3-best-companion-poster.png",
+      "video": "kimi-k3-best-companion.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "watchlist": {
+      "image": "kimi-k3-best-watchlist.png",
+      "poster": "kimi-k3-best-watchlist-poster.png",
+      "video": "kimi-k3-best-watchlist.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "privacy": {
+      "image": "kimi-k3-best-privacy.png",
+      "poster": "kimi-k3-best-privacy-poster.png",
+      "video": "kimi-k3-best-privacy.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "terms": {
+      "image": "kimi-k3-best-terms.png",
+      "poster": "kimi-k3-best-terms-poster.png",
+      "video": "kimi-k3-best-terms.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    },
+    "notfound": {
+      "image": "kimi-k3-best-notfound.png",
+      "poster": "kimi-k3-best-notfound-poster.png",
+      "video": "kimi-k3-best-notfound.webm",
+      "mime": "video/webm;codecs=vp9",
+      "durationSeconds": 12
+    }
+  }
+}

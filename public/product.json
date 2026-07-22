@@ -1,0 +1,129 @@
+{
+  "name": "Kimi K3 Best",
+  "origin": "https://kimik3.best",
+  "collectedAt": "2026-07-23T00:30:00+08:00",
+  "sourceRepository": "https://github.com/clauxel/kimik3",
+  "pages": [
+    {
+      "key": "home",
+      "path": "https://kimik3.best/",
+      "title": "Kimi K3 Best - Source-First Kimi K3 Research Map",
+      "sourceIds": [
+        "official-kimi-k3-blog",
+        "kimi-api-quickstart",
+        "arxiv-kimi-linear",
+        "k3-tech-report-watch"
+      ]
+    },
+    {
+      "key": "official",
+      "path": "https://kimik3.best/official-sources/",
+      "title": "Kimi K3 Official Sources - Launch, Help Center and Product Pages",
+      "sourceIds": [
+        "official-kimi-k3-blog",
+        "moonshot-homepage",
+        "kimi-help-getting-started",
+        "kimi-agent-overview",
+        "kimi-model-mode-selection",
+        "kimi-websites-overview"
+      ]
+    },
+    {
+      "key": "api",
+      "path": "https://kimik3.best/api-and-developer/",
+      "title": "Kimi K3 API and Developer Notes - Pricing, Context and Model IDs",
+      "sourceIds": [
+        "kimi-api-platform-home",
+        "kimi-api-quickstart",
+        "kimi-k3-api-guide",
+        "kimi-k3-pricing",
+        "kimi-code-models",
+        "kimi-code-whats-new"
+      ]
+    },
+    {
+      "key": "architecture",
+      "path": "https://kimik3.best/architecture/",
+      "title": "Kimi K3 Architecture Trail - KDA, Attention Residuals and FlashKDA",
+      "sourceIds": [
+        "arxiv-kimi-linear",
+        "arxiv-attention-residuals",
+        "github-attention-residuals",
+        "github-flashkda",
+        "hf-kimi-linear-collection",
+        "moonshot-github-org"
+      ]
+    },
+    {
+      "key": "reviews",
+      "path": "https://kimik3.best/reviews-and-media/",
+      "title": "Kimi K3 Reviews, Media and Community Signals",
+      "sourceIds": [
+        "nature-scientists",
+        "ap-kimi-k3",
+        "tomshardware-kimi-k3",
+        "generative-ai-review",
+        "cnblogs-engineering-review",
+        "kimik3-io-about",
+        "hn-digest-kimi-k3",
+        "bilibili-search-kimi-k3"
+      ]
+    },
+    {
+      "key": "companion",
+      "path": "https://kimik3.best/companion-pages/",
+      "title": "Kimi K3 Practical Companion Pages - Context, Pricing, Deployment and Benchmarks",
+      "sourceIds": [
+        "kimi3-org-companion-pages",
+        "v2ex-resource-site-thread",
+        "v2ex-membership-thread",
+        "hn-digest-kimi-k3",
+        "bilibili-search-kimi-k3",
+        "youtube-search-kimi-k3"
+      ]
+    },
+    {
+      "key": "watchlist",
+      "path": "https://kimik3.best/follow-up-watchlist/",
+      "title": "Kimi K3 Follow-Up Watchlist - Technical Report, Weights and Official Repos",
+      "sourceIds": [
+        "k3-tech-report-watch",
+        "official-kimi-k3-blog",
+        "moonshot-github-org",
+        "moonshot-hf-org",
+        "hf-thirdparty-placeholder",
+        "youtube-search-kimi-k3",
+        "bilibili-search-kimi-k3"
+      ]
+    }
+  ],
+  "sourceCounts": {
+    "total": 36,
+    "byBatch": {
+      "batch-1-official": 6,
+      "batch-3-developer": 6,
+      "batch-2-papers": 7,
+      "batch-4-evaluations": 7,
+      "batch-5-media-community": 8,
+      "batch-6-followup": 2
+    },
+    "byStatus": {
+      "verified": 33,
+      "queued": 1,
+      "not official": 1,
+      "pending official release": 1
+    }
+  },
+  "currentStatus": {
+    "technicalReport": "pending official release",
+    "fullWeights": "scheduled by official materials for 2026-07-27; pending verification",
+    "officialGitHubKimiK3Repo": "not found in current scan",
+    "officialHuggingFaceKimiK3Repo": "not found in current scan"
+  },
+  "apiDefaults": {
+    "cacheHitUsdPerMTok": 0.3,
+    "inputUsdPerMTok": 3,
+    "outputUsdPerMTok": 15,
+    "pricingRequiresCurrentOfficialCheck": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "kimik3-best",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "generate": "node scripts/generate-kimik3-site.mjs",
+    "media": "node scripts/generate-kimik3-media.mjs",
+    "validate": "node scripts/validate-kimik3-site.mjs",
+    "build": "npm run generate && npm run media && npm run validate",
+    "deploy": "wrangler deploy"
+  }
+}
