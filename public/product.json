@@ -17,6 +17,23 @@
     "siteRepo": "https://github.com/clauxel/kimik3-best",
     "sourceLedger": "data/kimi-k3-sources.json"
   },
+  "mainCta": {
+    "destination": "https://kimi3.org/",
+    "utm": {
+      "utm_source": "kimik3.best",
+      "utm_medium": "referral",
+      "utm_campaign": "kimik3_best_main_cta"
+    },
+    "contentByPage": {
+      "home": "home",
+      "official": "official-sources",
+      "api": "api-and-developer",
+      "architecture": "architecture",
+      "reviews": "reviews-and-media",
+      "companion": "companion-pages",
+      "watchlist": "follow-up-watchlist"
+    }
+  },
   "gates": {
     "trust_data_gate": "pass",
     "trust_content_gate": "pass",

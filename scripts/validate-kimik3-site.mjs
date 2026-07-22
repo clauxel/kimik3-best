@@ -42,6 +42,16 @@ function pageUrl(route) {
   return `${origin}/${route ? `${route}/` : ""}`;
 }
 
+function mainCtaUrl(route) {
+  const params = new URLSearchParams({
+    utm_source: "kimik3.best",
+    utm_medium: "referral",
+    utm_campaign: "kimik3_best_main_cta",
+    utm_content: route || "home"
+  });
+  return `https://kimi3.org/?${params.toString()}`;
+}
+
 async function assertAsset(file, minSize) {
   await access(join(pub, "assets", "media", file));
   const info = await stat(join(pub, "assets", "media", file));
@@ -70,6 +80,8 @@ for (const route of routes) {
   assert.match(html, /<section class="hero hero-[^"]+"/, `${route || "/"} must have full-screen hero`);
   assert.match(html, /<video class="hero-video" autoplay muted loop playsinline/, `${route || "/"} needs full-screen hero video`);
   assert.match(html, /<video class="motion-source" controls muted loop playsinline/, `${route || "/"} needs controlled explainer video`);
+  const mainCta = html.match(/<a class="primary" href="([^"]+)" data-track="main_cta" data-cta-destination="kimi3\.org">/);
+  assert.equal(mainCta?.[1], mainCtaUrl(route), `${route || "/"} main CTA must point to kimi3.org with UTM`);
   assert.match(html, /<img src="\/assets\/media\/[^"]+\.png" width="1280" height="720"/, `${route || "/"} needs fixed-size visual image`);
   const stories = (html.match(/<article class="story">/g) || []).length;
   const visuals = (html.match(/class="story-visual"/g) || []).length;
@@ -96,6 +108,7 @@ for (const route of ["privacy", "terms"]) {
 const notFound = await readFile(join(pub, "404.html"), "utf8");
 assert.match(notFound, /<meta name="robots" content="noindex,follow">/);
 assert.match(notFound, /<video class="motion-source" controls muted loop playsinline/, "404 needs an explainer video");
+assert.ok(notFound.includes(`href="${mainCtaUrl("404")}" data-track="main_cta"`), "404 main CTA must point to kimi3.org with UTM");
 for (const pattern of forbidden) assert.doesNotMatch(notFound, pattern, "404 leaks old or private copy");
 const notFoundMedia = extractMedia(notFound, "404");
 await assertAsset(notFoundMedia.video, 20000);

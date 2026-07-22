@@ -1,5 +1,11 @@
 # Website changelog
 
+## 2026-07-23 - Primary action destination update
+
+- Updated the homepage, core page and 404 primary action links to route readers to the hosted Kimi3.org workflow destination.
+- Added generator and validation coverage so the generated page set keeps the primary action destination consistent.
+- Deployed Cloudflare Worker `kimik3-best` version `d584e876-6154-4537-b19b-2a27d40f32e9`; live page probes confirmed the updated primary action links on the production domain.
+
 ## 2026-07-23 - Initial Kimi K3 Best launch
 
 - Built `kimik3.best` as a source-first Kimi K3 research map powered by the public `clauxel/kimik3` source ledger.

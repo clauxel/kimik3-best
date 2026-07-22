@@ -10,6 +10,12 @@ const supportEmail = "support@aigeamy.com";
 const collectedAt = "2026-07-23T00:30:00+08:00";
 const updated = "2026-07-23";
 const indexNowKey = "590a3ab02487cffe4cfd55b0df769f65";
+const mainCtaBase = "https://kimi3.org/";
+const mainCtaParams = {
+  utm_source: "kimik3.best",
+  utm_medium: "referral",
+  utm_campaign: "kimik3_best_main_cta"
+};
 
 const sourceLedger = JSON.parse(await readFile(join(sourceRoot, "data/kimi-k3-sources.json"), "utf8"));
 const sources = sourceLedger.sources;
@@ -360,6 +366,14 @@ function pageDir(page) {
   return page.path ? join(publicRoot, page.path) : publicRoot;
 }
 
+function mainCtaHref(page) {
+  const params = new URLSearchParams({
+    ...mainCtaParams,
+    utm_content: page.path || "home"
+  });
+  return `${mainCtaBase}?${params.toString()}`;
+}
+
 function asset(page, index) {
   return media[page.key][index];
 }
@@ -428,7 +442,7 @@ function hero(page) {
       <h1>${escape(page.h1)}</h1>
       <p class="lead">${escape(page.lead)}</p>
       <div class="hero-actions">
-        <a class="primary" href="${page.primaryHref}" data-track="internal_link">${escape(page.primaryText)}</a>
+        <a class="primary" href="${mainCtaHref(page)}" data-track="main_cta" data-cta-destination="kimi3.org">${escape(page.primaryText)}</a>
         <a href="${page.secondaryHref}" data-track="internal_link">${escape(page.secondaryText)}</a>
       </div>
     </div>
@@ -766,6 +780,11 @@ function productData() {
       siteRepo: "https://github.com/clauxel/kimik3-best",
       sourceLedger: "data/kimi-k3-sources.json"
     },
+    mainCta: {
+      destination: mainCtaBase,
+      utm: mainCtaParams,
+      contentByPage: Object.fromEntries(pages.map((page) => [page.key, page.path || "home"]))
+    },
     gates: {
       trust_data_gate: "pass",
       trust_content_gate: "pass",
@@ -897,7 +916,7 @@ await write(join(publicRoot, "404.html"), `<!doctype html>
   <main class="simple-main">
     <h1>Page not found</h1>
     <p>The source map moved. Start from the Kimi K3 Best home page or open the official-source index.</p>
-    <p><a class="primary text-button" href="/">Open home</a> <a class="text-button" href="/official-sources/">Official sources</a></p>
+    <p><a class="primary text-button" href="${mainCtaHref({ path: "404" })}" data-track="main_cta" data-cta-destination="kimi3.org">Open home</a> <a class="text-button" href="/official-sources/">Official sources</a></p>
     <section class="simple-video" aria-label="Page not found explainer video">
       <video class="motion-source" controls muted loop playsinline preload="metadata" poster="/assets/media/${media.notfound[2]}">
         <source src="/assets/media/${media.notfound[1]}" type="video/webm">
