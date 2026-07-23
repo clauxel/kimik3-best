@@ -49,7 +49,24 @@ function mainCtaUrl(route) {
     utm_campaign: "kimik3_best_main_cta",
     utm_content: route || "home"
   });
-  return `https://kimi3.org/?${params.toString()}`;
+  return `https://k3nova.com/?${params.toString()}`;
+}
+
+function visibleWordCount(html) {
+  const text = html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&[a-z0-9#]+;/gi, " ");
+  return (text.match(/[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*/g) || []).length;
+}
+
+function phraseCount(html, phrase) {
+  const text = html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ");
+  return (text.match(new RegExp(`\\b${phrase.replace(/\s+/g, "\\s+")}\\b`, "gi")) || []).length;
 }
 
 async function assertAsset(file, minSize) {
@@ -70,6 +87,9 @@ function extractMedia(html, route) {
 for (const route of routes) {
   const html = await readFile(join(pub, route, "index.html"), "utf8");
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${route || "/"} must have one H1`);
+  const description = html.match(/<meta name="description" content="([^"]*)">/)?.[1] || "";
+  assert.ok(description.length > 90 && description.length <= 160, `${route || "/"} meta description should fit SERP length`);
+  assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml" sizes="any">/, `${route || "/"} must declare favicon`);
   assert.match(html, new RegExp(`<link rel="canonical" href="${pageUrl(route).replaceAll(".", "\\.")}">`), `${route || "/"} canonical mismatch`);
   assert.match(html, new RegExp(`<meta property="og:url" content="${pageUrl(route).replaceAll(".", "\\.")}">`), `${route || "/"} og:url mismatch`);
   assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
@@ -80,8 +100,8 @@ for (const route of routes) {
   assert.match(html, /<section class="hero hero-[^"]+"/, `${route || "/"} must have full-screen hero`);
   assert.match(html, /<video class="hero-video" autoplay muted loop playsinline/, `${route || "/"} needs full-screen hero video`);
   assert.match(html, /<video class="motion-source" controls muted loop playsinline/, `${route || "/"} needs controlled explainer video`);
-  const mainCta = html.match(/<a class="primary" href="([^"]+)" data-track="main_cta" data-cta-destination="kimi3\.org">/);
-  assert.equal(mainCta?.[1], mainCtaUrl(route), `${route || "/"} main CTA must point to kimi3.org with UTM`);
+  const mainCta = html.match(/<a class="primary" href="([^"]+)" data-track="main_cta" data-cta-destination="k3nova\.com">/);
+  assert.equal(mainCta?.[1], mainCtaUrl(route), `${route || "/"} main CTA must point to k3nova.com with UTM`);
   assert.match(html, /<img src="\/assets\/media\/[^"]+\.png" width="1280" height="720"/, `${route || "/"} needs fixed-size visual image`);
   const stories = (html.match(/<article class="story">/g) || []).length;
   const visuals = (html.match(/class="story-visual"/g) || []).length;
@@ -92,11 +112,20 @@ for (const route of routes) {
   const media = extractMedia(html, route);
   await assertAsset(media.video, 20000);
   for (const png of media.pngs) await assertAsset(png, 6000);
+
+  if (route === "") {
+    const words = visibleWordCount(html);
+    const exactKeywordCount = phraseCount(html, "Kimi K3");
+    const exactKeywordDensity = (exactKeywordCount * 2 * 100) / words;
+    assert.ok(words >= 1200 && words <= 1800, `homepage visible word count ${words} should be in 1200-1800 range`);
+    assert.ok(exactKeywordDensity <= 3, `homepage exact keyword density ${exactKeywordDensity.toFixed(2)}% should avoid stuffing`);
+  }
 }
 
 for (const route of ["privacy", "terms"]) {
   const html = await readFile(join(pub, route, "index.html"), "utf8");
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${route} must have one H1`);
+  assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml" sizes="any">/, `${route} must declare favicon`);
   assert.match(html, /<video class="motion-source" controls muted loop playsinline/, `${route} needs an explainer video`);
   assert.match(html, /<img src="\/assets\/media\/[^"]+\.png" width="1280" height="720"/, `${route} needs a visual image`);
   for (const pattern of forbidden) assert.doesNotMatch(html, pattern, `${route} leaks old or private copy`);
@@ -107,8 +136,9 @@ for (const route of ["privacy", "terms"]) {
 
 const notFound = await readFile(join(pub, "404.html"), "utf8");
 assert.match(notFound, /<meta name="robots" content="noindex,follow">/);
+assert.match(notFound, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml" sizes="any">/, "404 must declare favicon");
 assert.match(notFound, /<video class="motion-source" controls muted loop playsinline/, "404 needs an explainer video");
-assert.ok(notFound.includes(`href="${mainCtaUrl("404")}" data-track="main_cta"`), "404 main CTA must point to kimi3.org with UTM");
+assert.ok(notFound.includes(`href="${mainCtaUrl("404")}" data-track="main_cta"`), "404 main CTA must point to k3nova.com with UTM");
 for (const pattern of forbidden) assert.doesNotMatch(notFound, pattern, "404 leaks old or private copy");
 const notFoundMedia = extractMedia(notFound, "404");
 await assertAsset(notFoundMedia.video, 20000);
@@ -140,9 +170,12 @@ const css = await readFile(join(pub, "assets", "k3.css"), "utf8");
 assert.match(css, /min-height:\s*100svh/, "hero must be full screen");
 assert.doesNotMatch(css, /letter-spacing:\s*-\d/, "CSS must not use negative letter spacing");
 assert.doesNotMatch(css, /clamp\(/, "CSS must avoid viewport-scaled type");
-for (const token of [".hero-video", ".story-visual", ".source-spark", ".simple-video"]) {
+for (const token of [".hero-video", ".story-visual", ".depth-section", ".source-spark", ".simple-video"]) {
   assert.match(css, new RegExp(token.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `CSS missing ${token}`);
 }
+
+const favicon = await stat(join(pub, "favicon.svg"));
+assert.ok(favicon.size > 200, "favicon.svg is too small");
 
 const js = await readFile(join(pub, "assets", "k3.js"), "utf8");
 for (const token of ["api_cost_plan", "source_filter", "watchlist_update", "video_play"]) {

@@ -4,22 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kimi K3 API and Developer Notes - Pricing, Context and Model IDs</title>
-  <meta name="description" content="Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
+  <meta name="description" content="Practical Kimi K3 API notes: OpenAI-compatible shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://kimik3.best/api-and-developer/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kimi K3 Best">
   <meta property="og:title" content="Kimi K3 API and Developer Notes - Pricing, Context and Model IDs">
-  <meta property="og:description" content="Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
+  <meta property="og:description" content="Practical Kimi K3 API notes: OpenAI-compatible shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
   <meta property="og:url" content="https://kimik3.best/api-and-developer/">
   <meta property="og:image" content="https://kimik3.best/assets/media/kimi-k3-best-api.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kimi K3 API and Developer Notes - Pricing, Context and Model IDs">
-  <meta name="twitter:description" content="Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
+  <meta name="twitter:description" content="Practical Kimi K3 API notes: OpenAI-compatible shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.">
   <meta name="theme-color" content="#090907">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="preload" href="/assets/media/kimi-k3-best-api.webm" as="video" type="video/webm">
   <link rel="stylesheet" href="/assets/k3.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kimi K3 API and Developer Notes","description":"Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.","url":"https://kimik3.best/api-and-developer/","dateModified":"2026-07-23","isPartOf":{"@type":"WebSite","name":"Kimi K3 Best","url":"https://kimik3.best"},"mainEntity":{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"API shape and model examples","acceptedAnswer":{"@type":"Answer","text":"The source ledger records the official quickstart as OpenAI-compatible, with base_url set to https://api.moonshot.ai/v1 and example model kimi-k3. Kimi Code uses separate coding endpoints and model configuration."}},{"@type":"Question","name":"Reasoning and context controls matter","acceptedAnswer":{"@type":"Answer","text":"The K3 API guide notes that K3 always thinks. Developers can adjust reasoning_effort across low, high and max, and can set max_completion_tokens up to 1,048,576 when a workflow needs the long context ceiling."}},{"@type":"Question","name":"Pricing must be rechecked before production","acceptedAnswer":{"@type":"Answer","text":"At collection time, the API platform showed cache hit $0.30/MTok, input $3.00/MTok and output $15.00/MTok. Treat those as planning defaults and verify the current platform page before billing decisions."}}]},"about":[{"@type":"CreativeWork","name":"Kimi API Platform homepage","url":"https://platform.kimi.ai/"},{"@type":"CreativeWork","name":"Kimi API Quickstart","url":"https://platform.kimi.ai/docs/overview"},{"@type":"CreativeWork","name":"Kimi K3 API guide","url":"https://platform.kimi.ai/docs/guide/kimi-k3-quickstart"},{"@type":"CreativeWork","name":"Flagship Model Kimi K3 Pricing","url":"https://platform.kimi.ai/docs/pricing/chat-k3"},{"@type":"CreativeWork","name":"Kimi Code model configuration","url":"https://www.kimi.com/code/docs/en/kimi-code/models.html"},{"@type":"CreativeWork","name":"Kimi Code What’s New","url":"https://www.kimi.com/code/docs/en/kimi-code/whats-new.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kimi K3 API and Developer Notes","description":"Practical Kimi K3 API notes: OpenAI-compatible shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.","url":"https://kimik3.best/api-and-developer/","dateModified":"2026-07-23","isPartOf":{"@type":"WebSite","name":"Kimi K3 Best","url":"https://kimik3.best"},"mainEntity":{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"API shape and model examples","acceptedAnswer":{"@type":"Answer","text":"The source ledger records the official quickstart as OpenAI-compatible, with base_url set to https://api.moonshot.ai/v1 and example model kimi-k3. Kimi Code uses separate coding endpoints and model configuration."}},{"@type":"Question","name":"Reasoning and context controls matter","acceptedAnswer":{"@type":"Answer","text":"The K3 API guide notes that K3 always thinks. Developers can adjust reasoning_effort across low, high and max, and can set max_completion_tokens up to 1,048,576 when a workflow needs the long context ceiling."}},{"@type":"Question","name":"Pricing must be rechecked before production","acceptedAnswer":{"@type":"Answer","text":"At collection time, the API platform showed cache hit $0.30/MTok, input $3.00/MTok and output $15.00/MTok. Treat those as planning defaults and verify the current platform page before billing decisions."}}]},"about":[{"@type":"CreativeWork","name":"Kimi API Platform homepage","url":"https://platform.kimi.ai/"},{"@type":"CreativeWork","name":"Kimi API Quickstart","url":"https://platform.kimi.ai/docs/overview"},{"@type":"CreativeWork","name":"Kimi K3 API guide","url":"https://platform.kimi.ai/docs/guide/kimi-k3-quickstart"},{"@type":"CreativeWork","name":"Flagship Model Kimi K3 Pricing","url":"https://platform.kimi.ai/docs/pricing/chat-k3"},{"@type":"CreativeWork","name":"Kimi Code model configuration","url":"https://www.kimi.com/code/docs/en/kimi-code/models.html"},{"@type":"CreativeWork","name":"Kimi Code What’s New","url":"https://www.kimi.com/code/docs/en/kimi-code/whats-new.html"}]}</script>
 </head>
 <body class="page-api">
   <header class="site-header" data-track-zone="nav">
@@ -37,7 +38,7 @@
       <h1>Kimi K3 API and Developer Notes</h1>
       <p class="lead">Translate the Kimi API and Kimi Code entries into a concrete build checklist: endpoint shape, reasoning effort, context settings, token cost planning and current caveats.</p>
       <div class="hero-actions">
-        <a class="primary" href="https://kimi3.org/?utm_source=kimik3.best&utm_medium=referral&utm_campaign=kimik3_best_main_cta&utm_content=api-and-developer" data-track="main_cta" data-cta-destination="kimi3.org">Read architecture</a>
+        <a class="primary" href="https://k3nova.com/?utm_source=kimik3.best&utm_medium=referral&utm_campaign=kimik3_best_main_cta&utm_content=api-and-developer" data-track="main_cta" data-cta-destination="k3nova.com">Read architecture</a>
         <a href="/official-sources/" data-track="internal_link">Review official pages</a>
       </div>
     </div>
@@ -111,6 +112,7 @@
   </figure>
     </article>
   </section>
+    
     <section class="instrument api-cost-tool" id="tool" data-tool="api-cost">
     <div class="tool-copy">
       <span>API cost planner</span>

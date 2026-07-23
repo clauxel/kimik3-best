@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kimi K3 Best">
+  <rect width="64" height="64" rx="14" fill="#090907"/>
+  <path d="M14 14h28l8 8v28H22l-8-8z" fill="#3dd6c6"/>
+  <path d="M22 22h25v25H22z" fill="#f2c14e" opacity=".9"/>
+  <path d="M18 43l25-25 7 7-25 25z" fill="#e24d5c"/>
+</svg>

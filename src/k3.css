@@ -288,11 +288,13 @@ nav a[aria-current="page"]::after {
 
 .explainer,
 .story-grid,
+.depth-section,
 .instrument,
 .source-section,
 .related {
   width: min(var(--max), calc(100% - 44px));
   margin-inline: auto;
+  scroll-margin-top: 92px;
 }
 
 .explainer {
@@ -383,6 +385,89 @@ nav a[aria-current="page"]::after {
 
 .story-visual {
   margin: 0;
+}
+
+.depth-section {
+  padding: 88px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.depth-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.58fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.depth-intro,
+.depth-note,
+.depth-cards article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(244,241,232,0.045);
+}
+
+.depth-intro {
+  position: sticky;
+  top: 96px;
+  padding: 24px;
+}
+
+.depth-intro h3,
+.depth-note h3,
+.depth-cards h3 {
+  margin: 0;
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.depth-intro h3,
+.depth-note h3 {
+  font-size: 30px;
+}
+
+.depth-intro p,
+.depth-note p,
+.depth-cards p {
+  margin: 16px 0 0;
+  color: rgba(244,241,232,0.72);
+  line-height: 1.74;
+}
+
+.depth-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.depth-cards article {
+  min-height: 354px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.depth-cards span {
+  color: var(--accent, #3dd6c6);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.depth-cards h3 {
+  margin-top: 12px;
+  font-size: 24px;
+}
+
+.depth-cards a {
+  margin-top: auto;
+  color: var(--accent, #3dd6c6);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.depth-note {
+  grid-column: 1 / -1;
+  padding: 24px;
 }
 
 .visual-board {
@@ -797,6 +882,7 @@ footer > a {
   }
 
   .section-heading,
+  .depth-layout,
   .instrument,
   .video-shell,
   .simple-video,
@@ -816,10 +902,15 @@ footer > a {
   }
 
   .grid-inputs,
+  .depth-cards,
   .watch-grid,
   .source-grid,
   .related > div {
     grid-template-columns: 1fr;
+  }
+
+  .depth-intro {
+    position: static;
   }
 
   .arch-map {
@@ -913,6 +1004,7 @@ footer > a {
 
   .explainer,
   .story-grid,
+  .depth-section,
   .instrument,
   .source-section,
   .related,
@@ -934,6 +1026,22 @@ footer > a {
 
   .story-copy p {
     font-size: 16px;
+  }
+
+  .depth-section {
+    padding-top: 58px;
+  }
+
+  .depth-intro,
+  .depth-note,
+  .depth-cards article {
+    padding: 18px;
+  }
+
+  .depth-intro h3,
+  .depth-note h3,
+  .depth-cards h3 {
+    font-size: 24px;
   }
 
   .visual-board {

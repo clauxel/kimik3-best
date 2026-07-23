@@ -10,7 +10,7 @@ const supportEmail = "support@aigeamy.com";
 const collectedAt = "2026-07-23T00:30:00+08:00";
 const updated = "2026-07-23";
 const indexNowKey = "590a3ab02487cffe4cfd55b0df769f65";
-const mainCtaBase = "https://kimi3.org/";
+const mainCtaBase = "https://k3nova.com/";
 const mainCtaParams = {
   utm_source: "kimik3.best",
   utm_medium: "referral",
@@ -55,7 +55,7 @@ const sourceNotes = {
   "hn-digest-kimi-k3": "Hacker News digest useful for developer concerns around price, context length and reasoning efficiency.",
   "youtube-search-kimi-k3": "Queued English-video search slot for follow-up review and tutorial extraction.",
   "official-images-in-blog": "Official blog image inventory; this site uses original generated visuals instead of copying those images.",
-  "kimi3-org-companion-pages": "Independent practical page map for context, cost, pricing, deployment, hardware, benchmark and comparison readers.",
+  "k3nova-com-companion-pages": "Independent practical page map for context, cost, pricing, deployment, hardware, benchmark and comparison readers.",
   "hf-thirdparty-placeholder": "Third-party Hugging Face placeholder that must not be treated as official Kimi K3 weights.",
   "k3-tech-report-watch": "Top-priority watch item for the official technical report covering architecture, training and evaluation details."
 };
@@ -87,7 +87,7 @@ const pages = [
     pageClass: "home",
     accent: "#3dd6c6",
     title: "Kimi K3 Best - Source-First Kimi K3 Research Map",
-    description: "A practical Kimi K3 research map built from the clauxel/kimik3 source ledger, with official sources, API notes, architecture papers, reviews and follow-up checks.",
+    description: "A practical Kimi K3 research map from the clauxel/kimik3 ledger, with official sources, API notes, architecture papers, reviews and follow-ups.",
     h1: "Kimi K3 Best Source Map",
     eyebrow: "36-source Kimi K3 research navigator",
     lead: "Track what is official, what is developer-ready and what still needs verification before you quote, build with or compare Kimi K3.",
@@ -161,7 +161,7 @@ const pages = [
     pageClass: "api",
     accent: "#ff6f61",
     title: "Kimi K3 API and Developer Notes - Pricing, Context and Model IDs",
-    description: "Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.",
+    description: "Practical Kimi K3 API notes: OpenAI-compatible shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.",
     h1: "Kimi K3 API and Developer Notes",
     eyebrow: "Build planning from official docs",
     lead: "Translate the Kimi API and Kimi Code entries into a concrete build checklist: endpoint shape, reasoning effort, context settings, token cost planning and current caveats.",
@@ -280,7 +280,7 @@ const pages = [
     primaryText: "Plan API cost",
     secondaryHref: "/follow-up-watchlist/",
     secondaryText: "See follow-ups",
-    sourceIds: ["kimi3-org-companion-pages", "v2ex-resource-site-thread", "v2ex-membership-thread", "hn-digest-kimi-k3", "bilibili-search-kimi-k3", "youtube-search-kimi-k3"],
+    sourceIds: ["k3nova-com-companion-pages", "v2ex-resource-site-thread", "v2ex-membership-thread", "hn-digest-kimi-k3", "bilibili-search-kimi-k3", "youtube-search-kimi-k3"],
     chapters: ["Context", "Cost", "Deployment", "Hardware", "Benchmark"],
     statLabel: "practical page groups",
     statValue: "5",
@@ -442,7 +442,7 @@ function hero(page) {
       <h1>${escape(page.h1)}</h1>
       <p class="lead">${escape(page.lead)}</p>
       <div class="hero-actions">
-        <a class="primary" href="${mainCtaHref(page)}" data-track="main_cta" data-cta-destination="kimi3.org">${escape(page.primaryText)}</a>
+        <a class="primary" href="${mainCtaHref(page)}" data-track="main_cta" data-cta-destination="k3nova.com">${escape(page.primaryText)}</a>
         <a href="${page.secondaryHref}" data-track="internal_link">${escape(page.secondaryText)}</a>
       </div>
     </div>
@@ -495,6 +495,55 @@ function storySections(page) {
       </div>
       ${storyVisual(page, section, index)}
     </article>`).join("")}
+  </section>`;
+}
+
+function homeGuide(page) {
+  if (page.key !== "home") return "";
+  return `<section class="depth-section" aria-label="How to use the research map" style="--accent:${page.accent}">
+    <div class="section-heading">
+      <span>Reading path</span>
+      <h2>Use the map without losing the source trail</h2>
+      <p>The home page is designed for quick routing first and careful checking second, so a reader can move from a question to the source set that actually supports an answer.</p>
+    </div>
+    <div class="depth-layout">
+      <article class="depth-intro">
+        <h3>Start from the decision, then inspect the evidence</h3>
+        <p>Kimi K3 Best is not a single long article trying to settle every claim. It is a compact research workspace for launch facts, developer notes, architecture references, review signals and unresolved release items. The useful habit is to pick the decision you are making, open the matching page, and then keep the card labels visible while reading. Official product statements, academic papers, implementation repositories, news coverage and community threads each answer a different kind of question. Mixing those source types can make a page feel simpler, but it also makes it easier to quote a benchmark, price, access limit or release status with more confidence than the source deserves.</p>
+        <p>The sections below give a practical route for common reader jobs. They keep the language plain on purpose: decide what you need, choose the page, read the strongest source first, then use the watchlist before making an operational or editorial commitment. That pattern makes the site useful for developers planning a build, researchers checking architecture terms, editors writing summaries and teams comparing early reactions without turning volatile launch-week material into fixed facts.</p>
+      </article>
+      <div class="depth-cards">
+        <article>
+          <span>Developers</span>
+          <h3>Plan an API or tool workflow</h3>
+          <p>Open the API notes when the next step involves endpoint shape, model names, reasoning effort, context limits or price planning. The page keeps setup details close to the official platform sources and separates planning defaults from current billing decisions. A useful implementation brief should name the endpoint family, expected token mix, output length, context setting and any production recheck that must happen before spend is committed. The cost planner is intentionally simple so teams can adjust cache, input and output volume without pretending that a static page replaces the live platform.</p>
+          <a href="/api-and-developer/" data-track="internal_link">Open API notes</a>
+        </article>
+        <article>
+          <span>Researchers</span>
+          <h3>Trace architecture terms carefully</h3>
+          <p>Use the architecture page when a claim mentions KDA, Attention Residuals, FlashKDA, long-context efficiency or related implementation work. That page points to papers and official repositories, but it does not turn every paper result into a deployment claim for this exact model. The distinction matters: a paper can explain a method, a repository can show engineering direction, and a launch page can name components, yet full reproducible inference details may still require the later technical report, model card, weights or serving notes.</p>
+          <a href="/architecture/" data-track="internal_link">Trace architecture</a>
+        </article>
+        <article>
+          <span>Editors</span>
+          <h3>Check release status before quoting</h3>
+          <p>Open the official-source index for stable product facts, then use the follow-up page for anything that could change quickly. Technical report availability, full weights, official organization pages, video coverage and third-party placeholders should never be compressed into a single yes-or-no claim without a fresh check. The watchlist keeps those items visible so a summary can say exactly what is verified, what is pending, and what is only a same-name or community reference. That makes public writing cleaner and reduces accidental overstatement.</p>
+          <a href="/follow-up-watchlist/" data-track="internal_link">Review watchlist</a>
+        </article>
+        <article>
+          <span>Comparisons</span>
+          <h3>Use reviews as signals, not proof</h3>
+          <p>The review and media page is best for understanding how launch-week readers reacted: scientific coverage, hardware framing, hands-on coding impressions, measurement disclosures and community pain points. Those sources are valuable because they reveal questions that official pages may not emphasize. They are weaker when used as final proof of quality, benchmark rank or access limits. Treat them as signals that guide follow-up reading, then confirm hard claims through official docs, papers or directly inspectable evidence before using them in a product page, report or comparison table.</p>
+          <a href="/reviews-and-media/" data-track="internal_link">Read review signals</a>
+        </article>
+      </div>
+      <article class="depth-note">
+        <h3>A practical reading order</h3>
+        <p>For a new research pass, start with the official-source index and write down only the facts that the primary pages directly support. Move next to API notes if the task involves building, pricing, long context or tool integration. Use the architecture trail when terminology from the launch page needs a paper or repository behind it. Add review and media signals only after the official boundary is clear, because outside coverage often mixes market reaction, hands-on impressions and speculation. Finish with the watchlist before publishing or making a production decision, especially when the question touches weights, technical-report details, model hosting or video/tutorial freshness.</p>
+        <p>For a returning reader, the fastest path is different. Use the navigation as a filter: official facts for citation, API for implementation, architecture for method context, reviews for outside reactions and watchlist for unresolved items. If a card is marked pending, queued or not official, treat it as a prompt for rechecking rather than as a source to quote. If a claim depends on price, access level, context window, repository status or model availability, assume it can change and verify the linked source directly before acting.</p>
+      </article>
+    </div>
   </section>`;
 }
 
@@ -702,6 +751,7 @@ function html(page) {
   <meta name="twitter:title" content="${escape(page.title)}">
   <meta name="twitter:description" content="${escape(page.description)}">
   <meta name="theme-color" content="#090907">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="preload" href="/assets/media/${asset(page, 1)}" as="video" type="video/webm">
   <link rel="stylesheet" href="/assets/k3.css">
   <script type="application/ld+json">${schema(page)}</script>
@@ -712,6 +762,7 @@ function html(page) {
     ${hero(page)}
     ${explainerVideo(page)}
     ${storySections(page)}
+    ${homeGuide(page)}
     ${tool(page)}
     ${sourceSection(page)}
     ${related(page)}
@@ -740,6 +791,7 @@ function simplePage({ path, title, h1, description, robots = "index,follow", bod
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${origin}/assets/media/${mediaFiles[0]}">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="stylesheet" href="/assets/k3.css">
 </head>
 <body class="page-simple">
@@ -845,6 +897,16 @@ Sitemap: ${origin}/sitemap.xml
 `;
 }
 
+function faviconSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kimi K3 Best">
+  <rect width="64" height="64" rx="14" fill="#090907"/>
+  <path d="M14 14h28l8 8v28H22l-8-8z" fill="#3dd6c6"/>
+  <path d="M22 22h25v25H22z" fill="#f2c14e" opacity=".9"/>
+  <path d="M18 43l25-25 7 7-25 25z" fill="#e24d5c"/>
+</svg>
+`;
+}
+
 function llms() {
   return `# Kimi K3 Best
 
@@ -876,6 +938,7 @@ await mkdir(join(publicRoot, "assets", "media"), { recursive: true });
 await mkdir(join(publicRoot, "data"), { recursive: true });
 await copyFile(join(root, "src", "k3.css"), join(publicRoot, "assets", "k3.css"));
 await copyFile(join(root, "src", "k3.js"), join(publicRoot, "assets", "k3.js"));
+await write(join(publicRoot, "favicon.svg"), faviconSvg());
 
 for (const page of pages) {
   await write(join(pageDir(page), "index.html"), html(page));
@@ -909,6 +972,7 @@ await write(join(publicRoot, "404.html"), `<!doctype html>
   <link rel="canonical" href="${origin}/404.html">
   <meta property="og:image" content="${origin}/assets/media/${media.notfound[0]}">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="stylesheet" href="/assets/k3.css">
 </head>
 <body class="page-simple">
@@ -916,7 +980,7 @@ await write(join(publicRoot, "404.html"), `<!doctype html>
   <main class="simple-main">
     <h1>Page not found</h1>
     <p>The source map moved. Start from the Kimi K3 Best home page or open the official-source index.</p>
-    <p><a class="primary text-button" href="${mainCtaHref({ path: "404" })}" data-track="main_cta" data-cta-destination="kimi3.org">Open home</a> <a class="text-button" href="/official-sources/">Official sources</a></p>
+    <p><a class="primary text-button" href="${mainCtaHref({ path: "404" })}" data-track="main_cta" data-cta-destination="k3nova.com">Open home</a> <a class="text-button" href="/official-sources/">Official sources</a></p>
     <section class="simple-video" aria-label="Page not found explainer video">
       <video class="motion-source" controls muted loop playsinline preload="metadata" poster="/assets/media/${media.notfound[2]}">
         <source src="/assets/media/${media.notfound[1]}" type="video/webm">

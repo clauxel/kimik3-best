@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="Kimi K3 Architecture Trail - KDA, Attention Residuals and FlashKDA">
   <meta name="twitter:description" content="A Kimi K3 architecture trail through Kimi Linear, Kimi Delta Attention, Attention Residuals, FlashKDA and official implementation repositories.">
   <meta name="theme-color" content="#090907">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="preload" href="/assets/media/kimi-k3-best-architecture.webm" as="video" type="video/webm">
   <link rel="stylesheet" href="/assets/k3.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kimi K3 Architecture Trail","description":"A Kimi K3 architecture trail through Kimi Linear, Kimi Delta Attention, Attention Residuals, FlashKDA and official implementation repositories.","url":"https://kimik3.best/architecture/","dateModified":"2026-07-23","isPartOf":{"@type":"WebSite","name":"Kimi K3 Best","url":"https://kimik3.best"},"mainEntity":{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kimi Delta Attention is the key architecture thread","acceptedAnswer":{"@type":"Answer","text":"The Kimi Linear paper introduces KDA and reports up to 75% KV-cache reduction and up to 6x decoding throughput at 1M context in the paper setting. The K3 page points to KDA as part of the model architecture."}},{"@type":"Question","name":"Attention Residuals explain the other named component","acceptedAnswer":{"@type":"Answer","text":"The Attention Residuals paper and repository describe cross-layer attention for reducing information dilution in deep PreNorm models, plus Block AttnRes for large-scale training efficiency."}},{"@type":"Question","name":"FlashKDA is the implementation bridge","acceptedAnswer":{"@type":"Answer","text":"FlashKDA is an official MoonshotAI kernel repository. It is useful for understanding engineering direction, and it becomes more important after official K3 weights and inference notes can be verified."}}]},"about":[{"@type":"CreativeWork","name":"Kimi Linear: An Expressive, Efficient Attention Architecture","url":"https://arxiv.org/abs/2510.26692"},{"@type":"CreativeWork","name":"Attention Residuals","url":"https://arxiv.org/abs/2603.15031"},{"@type":"CreativeWork","name":"MoonshotAI/Attention-Residuals","url":"https://github.com/MoonshotAI/Attention-Residuals"},{"@type":"CreativeWork","name":"MoonshotAI/FlashKDA","url":"https://github.com/MoonshotAI/FlashKDA"},{"@type":"CreativeWork","name":"Hugging Face Kimi Linear collection","url":"https://huggingface.co/moonshotai/collections"},{"@type":"CreativeWork","name":"MoonshotAI GitHub organization","url":"https://github.com/MoonshotAI"}]}</script>
@@ -37,7 +38,7 @@
       <h1>Kimi K3 Architecture Trail</h1>
       <p class="lead">Follow the research and implementation sources that explain the architecture terms used in the Kimi K3 launch materials.</p>
       <div class="hero-actions">
-        <a class="primary" href="https://kimi3.org/?utm_source=kimik3.best&utm_medium=referral&utm_campaign=kimik3_best_main_cta&utm_content=architecture" data-track="main_cta" data-cta-destination="kimi3.org">Read external reviews</a>
+        <a class="primary" href="https://k3nova.com/?utm_source=kimik3.best&utm_medium=referral&utm_campaign=kimik3_best_main_cta&utm_content=architecture" data-track="main_cta" data-cta-destination="k3nova.com">Read external reviews</a>
         <a href="/follow-up-watchlist/" data-track="internal_link">Track weight release</a>
       </div>
     </div>
@@ -111,6 +112,7 @@
   </figure>
     </article>
   </section>
+    
     <section class="instrument architecture-tool" id="tool" data-tool="architecture-map">
     <div class="tool-copy">
       <span>Architecture map</span>

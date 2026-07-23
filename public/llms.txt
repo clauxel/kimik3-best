@@ -5,9 +5,9 @@ Source-first Kimi K3 research map generated from https://github.com/clauxel/kimi
 Collected source ledger timestamp: 2026-07-23T00:30:00+08:00
 
 ## Pages
-- Kimi K3 Best Source Map: https://kimik3.best/ - A practical Kimi K3 research map built from the clauxel/kimik3 source ledger, with official sources, API notes, architecture papers, reviews and follow-up checks.
+- Kimi K3 Best Source Map: https://kimik3.best/ - A practical Kimi K3 research map from the clauxel/kimik3 ledger, with official sources, API notes, architecture papers, reviews and follow-ups.
 - Kimi K3 Official Sources: https://kimik3.best/official-sources/ - Official Kimi K3 source map covering the Kimi launch page, Moonshot company page, Kimi help center, model-mode guide and Kimi Websites overview.
-- Kimi K3 API and Developer Notes: https://kimik3.best/api-and-developer/ - Practical Kimi K3 API notes from the source ledger: OpenAI-compatible API shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.
+- Kimi K3 API and Developer Notes: https://kimik3.best/api-and-developer/ - Practical Kimi K3 API notes: OpenAI-compatible shape, base URL, model examples, reasoning effort, 1M context, pricing and Kimi Code endpoints.
 - Kimi K3 Architecture Trail: https://kimik3.best/architecture/ - A Kimi K3 architecture trail through Kimi Linear, Kimi Delta Attention, Attention Residuals, FlashKDA and official implementation repositories.
 - Kimi K3 Reviews and Media Signals: https://kimik3.best/reviews-and-media/ - External Kimi K3 reviews and media signals from Nature, AP, Tom's Hardware, engineering tests, community discussions, video queues and measurement disclosures.
 - Kimi K3 Practical Companion Pages: https://kimik3.best/companion-pages/ - A practical Kimi K3 companion map for context window, API cost, pricing, local deployment, hardware requirements, benchmarks, alternatives and use-case pages.

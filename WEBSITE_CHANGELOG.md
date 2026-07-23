@@ -1,8 +1,16 @@
 # Website changelog
 
+## 2026-07-23 - Homepage content and metadata follow-up
+
+- Expanded the homepage with a reader-job guide and practical reading order so the page has substantial useful text in a natural voice.
+- Shortened homepage and API meta descriptions, added generated `favicon.svg` declarations, and synchronized the companion source id with the upstream `k3nova-com-companion-pages` ledger entry.
+- Added validation coverage for homepage content depth, phrase balance, favicon declaration, description length and the new homepage guide section.
+- Verification passed: `npm run build`, `npm run validate`, local desktop/mobile rendering checks, production no-cache probes and production desktop/mobile rendering checks.
+- Deployed Cloudflare Worker `kimik3-best` version `bf83bceb-921b-45f1-bf31-8803672cb073`; IndexNow URL update returned `200`.
+
 ## 2026-07-23 - Primary action destination update
 
-- Updated the homepage, core page and 404 primary action links to route readers to the hosted Kimi3.org workflow destination.
+- Updated the homepage, core page and 404 primary action links to route readers to the hosted k3nova.com workflow destination.
 - Added generator and validation coverage so the generated page set keeps the primary action destination consistent.
 - Deployed Cloudflare Worker `kimik3-best` version `d584e876-6154-4537-b19b-2a27d40f32e9`; live page probes confirmed the updated primary action links on the production domain.
 
